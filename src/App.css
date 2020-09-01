@@ -1,4 +1,7 @@
-.flex-row {
-  display: flex;
-  flex-direction: row;
+.pl-10 {
+  padding-left: 10px;
+}
+
+.result-section {
+  padding-bottom: 20px;
 }

@@ -22,26 +22,34 @@ function App() {
 	return (
 		<Container maxWidth="sm">
 			<Grid container spacing={3} alignItems="center" direction="row">
-				<Paper elevation={3}>
-					<h2>Please fill any two fields.</h2>
+				<Paper elevation={3} classes={{ root: 'pl-10' }}>
+					<h2>Bharyang</h2>
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<TextField
 							type="number"
 							name="perpendicular"
 							label="Height"
-							inputRef={register}
+							inputRef={register({ required: true })}
 						/>
-						<TextField type="number" name="base" label="Base" inputRef={register} />
-						<Button type="submit">Submit</Button>
+						<TextField
+							type="number"
+							name="base"
+							label="Width"
+							inputRef={register({ required: true })}
+						/>
+						<Button type="submit" variant="contained" color="primary">
+							Submit
+						</Button>
 					</form>
-					<div>
-            <Typography>Result</Typography>
-            <Typography>Hypotenuse</Typography>
-            {hypotenuse}
-            <Typography>Angle of ladder</Typography>
-            {angle}
-            </div>
+					<div className="result-section">
+						<Typography variant="h5">Result</Typography>
+						<Typography variant="subtitle1">Hypotenuse</Typography>
+						{hypotenuse.toFixed(2)}
+						<Typography variant="subtitle1">Angle of ladder</Typography>
+						&theta; {angle.toFixed(2)}
+					</div>
 				</Paper>
+				<img src="ladder.gif" alt="ladder reference" />
 			</Grid>
 		</Container>
 	);
