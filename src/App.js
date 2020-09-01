@@ -6,19 +6,18 @@ import { getHypotenuse, getAngle } from './engine/engine';
 
 function App() {
 	const [hypotenuse, setHypotenuse] = useState(0);
-  const [angle, setAngle] = useState(0);
+	const [angle, setAngle] = useState(0);
 
 	const { handleSubmit, register } = useForm();
 
 	const onSubmit = (values) => {
 		const hypotenuse = getHypotenuse(values.perpendicular, values.base);
-    setHypotenuse(hypotenuse);
-    
-    const angle = getAngle(values.base, hypotenuse);
-    setAngle(angle);
-    
-  };
-  
+		setHypotenuse(hypotenuse);
+
+		const angle = getAngle(values.base, hypotenuse);
+		setAngle(angle);
+	};
+
 	return (
 		<Container maxWidth="sm">
 			<Grid container spacing={3} alignItems="center" direction="row">
