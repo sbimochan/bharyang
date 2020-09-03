@@ -5,7 +5,8 @@ export default function Canvas({ perpendicular, base }) {
   const maxLength = 300;
   
 	const getDimension = (height, width) => {
-		const ratio = maxLength / height;
+    const largeValue = height >= width ? height : width;
+		const ratio = maxLength / largeValue;
 		return {
 			height: height * ratio,
 			width: width * ratio,
