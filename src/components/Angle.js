@@ -9,10 +9,14 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import '../App.css';
 import { getHypotenuse, getAngle } from '../engine/engine';
+import Canvas from './Canvas';
 
 export default function Angle() {
 	const [hypotenuse, setHypotenuse] = useState(0);
 	const [angle, setAngle] = useState(0);
+	const [perpendicular, setPerpendicular] = useState(0);
+	const [base, setBase] = useState(0);
+	const [isLoading, setIsLoading] = useState(false);
 
   	const useStyles = makeStyles((theme) => ({
 			root: {
@@ -25,11 +29,16 @@ export default function Angle() {
 	const { handleSubmit, register, errors } = useForm();
 
   const onSubmit = (values) => {
+		setIsLoading(true);
 		const hypotenuse = getHypotenuse(values.perpendicular, values.base);
 		setHypotenuse(hypotenuse);
+		setPerpendicular(values.perpendicular);
+		setBase(values.base);
 
 		const angle = getAngle(values.base, hypotenuse);
 		setAngle(angle);
+		setIsLoading(false);
+
   };
 	const classes = useStyles();
   
@@ -41,7 +50,9 @@ export default function Angle() {
 					label="Height"
 					inputRef={register({ required: true, pattern: /^(\d*\.)?\d+$/ })}
 					error={!!errors.perpendicular}
-					helperText={errors.perpendicular?.type === 'pattern' && 'Please enter a valid number.'}
+					helperText={
+						errors.perpendicular?.type === 'pattern' && 'Please enter a valid number.'
+					}
 				/>
 				<TextField
 					name="base"
@@ -67,6 +78,7 @@ export default function Angle() {
 				<Typography variant="subtitle1">Angle of ladder</Typography>
 				&theta; {angle.toFixed(2)}
 			</div>
+			{!isLoading && <Canvas perpendicular={perpendicular} base={base} />}
 		</Paper>
 	);
 }

@@ -21,11 +21,12 @@ function App() {
 
 	return (
 		<Container maxWidth="sm">
-				<h2>Bharyang</h2>
+			<h2>Bharyang</h2>
 			<Grid container spacing={3} alignItems="center" direction="row">
 				<Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
 					<Tab label="Angle finder" {...a11yProps(0)} />
 					<Tab label="Width finder" {...a11yProps(1)} />
+					<Tab label="Guide" {...a11yProps(2)} />
 				</Tabs>
 				<TabPanel value={value} index={0}>
 					<Angle />
@@ -33,8 +34,9 @@ function App() {
 				<TabPanel value={value} index={1}>
 					<Base />
 				</TabPanel>
-
-				<img src="ladder.gif" alt="ladder reference" className="pl-10"/>
+				<TabPanel value={value} index={2}>
+					<img src="ladder.gif" alt="ladder reference" className="pl-10" />
+				</TabPanel>
 			</Grid>
 		</Container>
 	);
