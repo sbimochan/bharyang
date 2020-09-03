@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import '../App.css';
 import { getHypotenuse, getAngle } from '../engine/engine';
 import Canvas from './Canvas';
+import Result from './Result';
 
 export default function Angle() {
 	const [perpendicular, setPerpendicular] = useState(0);
@@ -43,7 +44,7 @@ export default function Angle() {
 	const classes = useStyles();
   
   return (
-		<Paper elevation={3} classes={{ root: 'pl-10' }}>
+		<Paper elevation={3}>
 			<form onSubmit={handleSubmit(onSubmit)} className={classes.root}>
 				<TextField
 					name="perpendicular"
@@ -65,19 +66,12 @@ export default function Angle() {
 					Submit
 				</Button>
 			</form>
-			<Typography variant="caption" display="block">
-				Supports any type of units such as inches, cm, meters, etc.
-			</Typography>
-			<Typography variant="caption" display="block">
-				Make sure both height and base are in same units.
-			</Typography>
-			<div className="result-section">
-				<Typography variant="h5">Result</Typography>
+			<Result>
 				<Typography variant="subtitle1">Hypotenuse</Typography>
 				{hypotenuse.toFixed(2)}
 				<Typography variant="subtitle1">Angle of ladder</Typography>
 				&theta; {angle.toFixed(2)}
-			</div>
+			</Result>
 			{!isLoading && <Canvas perpendicular={perpendicular} base={base} />}
 		</Paper>
 	);

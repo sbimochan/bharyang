@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 
 export default function Canvas({ perpendicular, base }) {
 
-  const maxLength = 300;
+  const maxLength = 400;
+  const startPoint = 20;
   
 	const getDimension = (height, width) => {
     const largeValue = height >= width ? height : width;
@@ -22,13 +23,13 @@ export default function Canvas({ perpendicular, base }) {
     const context = canvasElement.getContext('2d');
 
     context.beginPath();
-    context.moveTo(100, 100);
-    context.lineTo(100, height);
-    context.lineTo(100 + width, height);
+    context.moveTo(startPoint, startPoint);
+    context.lineTo(startPoint, height);
+    context.lineTo(startPoint + width, height);
     context.closePath();
   
     // the outline
-    context.lineWidth = 10;
+    context.lineWidth = 5;
     context.strokeStyle = '#666666';
     context.stroke();
   

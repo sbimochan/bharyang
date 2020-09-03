@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Grid, Container, Tabs, Tab } from '@material-ui/core';
+import { Grid, Container, Tabs, Tab, Typography } from '@material-ui/core';
 import './App.css';
 import TabPanel from './components/TabPanel';
 import Angle from './components/Angle';
 import Base from './components/Base';
+import Guide from './components/Guide';
 
 function App() {
   const [value, setValue] = useState(0);
@@ -22,7 +23,7 @@ function App() {
 	return (
 		<Container maxWidth="sm">
 			<h2>Bharyang</h2>
-			<Grid container spacing={3} alignItems="center" direction="row">
+			<Grid container spacing={3} alignItems="center" direction="row" wrap>
 				<Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
 					<Tab label="Angle finder" {...a11yProps(0)} />
 					<Tab label="Width finder" {...a11yProps(1)} />
@@ -35,7 +36,7 @@ function App() {
 					<Base />
 				</TabPanel>
 				<TabPanel value={value} index={2}>
-					<img src="ladder.gif" alt="ladder reference" className="pl-10" />
+					<Guide/>
 				</TabPanel>
 			</Grid>
 		</Container>
