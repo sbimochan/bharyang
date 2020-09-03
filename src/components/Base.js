@@ -68,7 +68,7 @@ export default function Base() {
 				<Typography variant="subtitle1">Required Width</Typography>
 				{base.toFixed(2)}
 			</Result>
-			{!isLoading && <Canvas perpendicular={perpendicular} base={base} />}
+			{!isLoading && <Canvas perpendicular={perpendicular} base={base} hypotenuse={hypotenuse}/>}
 		</Paper>
 	);
 }

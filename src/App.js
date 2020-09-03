@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Container, Tabs, Tab, Typography } from '@material-ui/core';
+import { Grid, Container, Tabs, Tab } from '@material-ui/core';
 import './App.css';
 import TabPanel from './components/TabPanel';
 import Angle from './components/Angle';

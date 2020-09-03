@@ -72,7 +72,7 @@ export default function Angle() {
 				<Typography variant="subtitle1">Angle of ladder</Typography>
 				&theta; {angle.toFixed(2)}
 			</Result>
-			{!isLoading && <Canvas perpendicular={perpendicular} base={base} />}
+			{!isLoading && <Canvas perpendicular={perpendicular} base={base} hypotenuse={hypotenuse}/>}
 		</Paper>
 	);
 }
