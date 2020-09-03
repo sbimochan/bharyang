@@ -12,9 +12,9 @@ import { getHypotenuse, getBase } from '../engine/engine';
 import Canvas from './Canvas';
 
 export default function Base() {
-	const [hypotenuse, setHypotenuse] = useState(0);
-	const [base, setBase] = useState(0);
 	const [perpendicular, setPerpendicular] = useState(0);
+	const [base, setBase] = useState(0);
+	const [hypotenuse, setHypotenuse] = useState(0);
 	const [isLoading, setIsLoading] = useState(false);
 
 	const useStyles = makeStyles((theme) => ({
