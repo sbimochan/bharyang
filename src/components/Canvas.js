@@ -45,6 +45,5 @@ export default function Canvas({ perpendicular, base, hypotenuse }) {
     context.fillText(hypotenuse, width/2, height/2)
   }
 
-
 	return <canvas id="triangle" width="500" height="500"></canvas>;
 }
