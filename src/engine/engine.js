@@ -3,21 +3,21 @@ export function getHypotenuse(perpendicular, base) {
   return hypotenuse;
 }
 
-export function radianToDegree(radian){
+export function radianToDegree(radian) {
   return radian * (180 / Math.PI);
 }
 
-export function degreeToRadian(deg){
-  return deg * Math.PI /180;
+export function degreeToRadian(deg) {
+  return (deg * Math.PI) / 180;
 }
 
 export function getAngle(base, hypotenuse) {
-  const radian = Math.acos(base/hypotenuse);
-  return radianToDegree(radian)
+  const radian = Math.acos(base / hypotenuse);
+  return radianToDegree(radian);
 }
 
 export function getBase(perpendicular, angle) {
   const radian = degreeToRadian(angle);
-  const base = perpendicular/Math.tan(radian);
+  const base = perpendicular / Math.tan(radian);
   return base;
 }

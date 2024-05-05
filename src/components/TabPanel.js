@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { Box } from '@material-ui/core';
 
 export default function TabPanel(props) {
@@ -12,12 +12,7 @@ export default function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box p={2}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box p={2}>{children}</Box>}
     </div>
   );
 }
-
