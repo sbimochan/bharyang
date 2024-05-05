@@ -1,6 +1,6 @@
 export function getHypotenuse(perpendicular, base) {
   const hypotenuse = Math.sqrt(perpendicular ** 2 + base ** 2);
-  return hypotenuse;
+  return parseFloat(hypotenuse.toFixed(2));
 }
 
 export function radianToDegree(radian) {
@@ -19,5 +19,5 @@ export function getAngle(base, hypotenuse) {
 export function getBase(perpendicular, angle) {
   const radian = degreeToRadian(angle);
   const base = perpendicular / Math.tan(radian);
-  return base;
+  return parseFloat(base.toFixed(2));
 }

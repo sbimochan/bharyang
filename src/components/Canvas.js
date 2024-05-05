@@ -41,7 +41,7 @@ export default function Canvas({ perpendicular, base, hypotenuse }) {
     context.fillStyle = '#000';
     context.fillText(perpendicular, 5, startPoint + height / 2);
     context.fillText(base, width / 2, height + 25);
-    context.fillText(hypotenuse, width / 2, height / 2);
+    context.fillText(hypotenuse, (width / 2) + 50, (height / 2) + 25);
   };
 
   return <canvas id="triangle" width="500" height="500"></canvas>;
